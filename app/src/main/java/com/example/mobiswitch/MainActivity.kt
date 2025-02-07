@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
             val wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
             val currentSSID = wifiManager.connectionInfo.ssid
 
-            if (currentSSID != "\"ESP32_Control\"") {
-                Toast.makeText(this, "Please connect to the ESP32 Wi-Fi", Toast.LENGTH_SHORT).show()
+            if (currentSSID != "\"MobiSwitch\"") {
+                Toast.makeText(this, "Please connect to MobiSwitch", Toast.LENGTH_SHORT).show()
             } else {
                 val url = if (isChecked) {
                     "http://192.168.4.1/on"
