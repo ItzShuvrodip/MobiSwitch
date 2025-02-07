@@ -2,7 +2,7 @@
 #include <WebServer.h>
 
 const char *ssid = "MobiSwitch";
-const char *password = "UTKARSH";
+const char *password = "12345678";
 
 WebServer server(80);
 
