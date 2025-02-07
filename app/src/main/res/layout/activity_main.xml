@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <Switch
+        android:id="@+id/switchLED"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LED Control   "
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:thumbTint="#036261"
+        android:trackTint="#BAF0EF"/>
+
+    <Button
+        android:id="@+id/btnChangeWiFi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change WiFi"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

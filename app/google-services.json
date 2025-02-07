@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "268219504651",
+    "firebase_url": "https://mobiswitch-89d10-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mobiswitch-89d10",
+    "storage_bucket": "mobiswitch-89d10.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268219504651:android:c8ec6b4bb08451abfd4f0e",
+        "android_client_info": {
+          "package_name": "com.example.mobiswitch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi55J3Pbk-93Od4WGG7N2-l9oLQDufrSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
