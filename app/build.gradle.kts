@@ -37,13 +37,14 @@ android {
 }
 
 dependencies {
-    implementation("com.google.gms:google-services:4.3.15")
+    implementation("com.google.gms:google-services:4.4.2")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
-    implementation ("com.google.firebase:firebase-database:20.0.5")
-    implementation ("com.google.firebase:firebase-auth:21.0.1")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation(libs.firebase.bom)
+    implementation ("com.google.firebase:firebase-database:21.0.0")
+    implementation (libs.firebase.auth)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
