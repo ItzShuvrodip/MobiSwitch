@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
                         if (response.isSuccessful) {
                             withContext(Dispatchers.Main) {
-                                Toast.makeText(this@MainActivity, "Command sent successfully", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this@MainActivity, "LED state changed", Toast.LENGTH_SHORT).show()
                             }
                         } else {
                             withContext(Dispatchers.Main) {

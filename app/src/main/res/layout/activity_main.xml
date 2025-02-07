@@ -1,20 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
     android:padding="20dp">
-
-    <Switch
-        android:id="@+id/switchLED"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LED Control   "
-        android:textSize="18sp"
-        android:padding="10dp"
-        android:thumbTint="#036261"
-        android:trackTint="#BAF0EF"/>
+        android:text="LED Control"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="25dp">
+        <TextView
+            android:id="@+id/textOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OFF"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#036261"
+            android:paddingEnd="8dp" />
+        <Switch
+            android:id="@+id/switchLED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:thumbTint="#036261"
+            android:trackTint="#BAF0EF"
+            android:textSize="1sp"
+            android:switchPadding="10dp"
+            android:paddingHorizontal="10dp"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+        <TextView
+            android:id="@+id/textOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ON"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#036261"
+            android:paddingStart="8dp" />
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/btnChangeWiFi"
@@ -22,5 +56,5 @@
         android:layout_height="wrap_content"
         android:text="Change WiFi"
         android:padding="10dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="10dp"/>
 </LinearLayout>
