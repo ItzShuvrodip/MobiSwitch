@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.wifi.WifiManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Switch
 import android.widget.Toast
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                     } catch (e: Exception) {
                         withContext(Dispatchers.Main) {
                             Toast.makeText(this@MainActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                            Log.d("Error", e.message ?: "Unknown error")
                         }
                     }
                 }
