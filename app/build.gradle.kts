@@ -1,4 +1,7 @@
-   plugins {
+import java.io.FileInputStream
+import java.util.Properties
+
+plugins {
         alias(libs.plugins.android.application)
         alias(libs.plugins.kotlin.android)
     }
@@ -6,6 +9,28 @@
 android {
     namespace = "com.example.mobiswitch"
     compileSdk = 35
+    signingConfigs {
+        create("release") {
+            val properties = Properties()
+            val localPropsFile = rootProject.file("local.properties")
+            if (localPropsFile.exists()) {
+                properties.load(FileInputStream(localPropsFile))
+            }
+
+            val storeFilePath = properties.getProperty("storeFile") ?: ""
+            val storePasswordVal = properties.getProperty("storePassword") ?: ""
+            val keyAliasVal = properties.getProperty("keyAlias") ?: ""
+            val keyPasswordVal = properties.getProperty("keyPassword") ?: ""
+
+            if (storeFilePath.isNotEmpty()) {
+                storeFile = file(storeFilePath)
+                storePassword = storePasswordVal
+                keyAlias = keyAliasVal
+                keyPassword = keyPasswordVal
+            }
+        }
+    }
+
 
     defaultConfig {
         applicationId = "com.example.mobiswitch"
@@ -16,16 +41,18 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11

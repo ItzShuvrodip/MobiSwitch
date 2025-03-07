@@ -1,21 +1,46 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# ✅ Keep all classes in your app package
+-keep class com.mobiswitch.** { *; }
+-keep class com.example.mobiswitch.** { *; }
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# ✅ Keep AndroidX components
+-keep class androidx.** { *; }
+-dontwarn androidx.**
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# ✅ Prevent issues with Android services
+-dontwarn android.os.ServiceManager*
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# ✅ Avoid warnings for common SDKs
+-dontwarn com.bun.miitmdid.core.MdidSdkHelper*
+-dontwarn com.google.firebase.iid.FirebaseInstanceId*
+-dontwarn com.huawei.hms.ads.identifier.AdvertisingIdClient*
+
+# ✅ Keep essential Android components
+-keep public class * extends android.app.Application { *; }
+-keep public class * extends android.app.Activity { *; }
+-keep public class * extends android.app.Service { *; }
+-keep public class * extends android.content.BroadcastReceiver { *; }
+-keep public class * extends android.content.ContentProvider { *; }
+
+# ✅ Keep classes that use Parcelable or Serializable
+-keep class * implements java.io.Serializable { *; }
+-keep class * implements android.os.Parcelable { *; }
+
+# ✅ Preserve all class members used in XML layouts
+-keepclassmembers class * {
+    public void *(android.view.View);
+    public void *(android.content.Context);
+}
+
+# ✅ Keep debugging info (Optional, but helps with crashes)
+-keepattributes SourceFile,LineNumberTable
+# Keep BouncyCastle security classes
+-keep class org.bouncycastle.** { *; }
+-dontwarn org.bouncycastle.**
+
+# Keep Conscrypt security classes
+-keep class org.conscrypt.** { *; }
+-dontwarn org.conscrypt.**
+
+# Keep OpenJSSE security classes
+-keep class org.openjsse.** { *; }
+-dontwarn org.openjsse.**
